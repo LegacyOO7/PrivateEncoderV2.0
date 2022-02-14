@@ -40,7 +40,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
      ## -vf eq=gamma=1.4:saturation=1.4
      ## lol 😂
     crf.append("32")
-    watermark.append('-m "drawtext=fontfile=font.ttf:fontsize=20:fontcolor=black:x=15:y=15:text='AnimeSeriesLoverz"')
+    watermark.append('-medium "drawtext=fontfile=font.ttf:fontsize=20:fontcolor=black:x=15:y=15:text='AnimeSeriesLoverz"')
     file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s 854x480 -b:v 150k -c:a aac -b:a 68k "{out_put_file_name}" -y'
  #Done !!
     COMPRESSION_START_TIME = time.time()
