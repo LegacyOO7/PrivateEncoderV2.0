@@ -39,9 +39,9 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     ##"-metadata", "title=@SenpaiAF", "-vf", "drawtext=fontfile=njnaruto.ttf:fontsize=20:fontcolor=black:x=15:y=15:text=" "Dark Encodes",
      ## -vf eq=gamma=1.4:saturation=1.4
      ## lol 😂
-    crf.append("32")
-    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=25:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=AnimeSerisLoverz"')
-    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s 854x480 -b:v 150k -metadata title="AnimeSeriesLoverz™ | 480p"  -metadata:s:v title="AnimeSeriesLoverz - 480p"  -metadata:s:a title="Opus ~ AnimeSeriesLoverz" -metadata:s:s title="English ~ AnimeSeriesLoverz" -c:a libopus -b:a 40k "{out_put_file_name}" -y'
+    crf.append("27")
+    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=25:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=@Animes_in_480p"')
+    file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]} -c:v libx265 -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s 854x480 -b:v 150k -metadata title="@Animes_in_480p" -c:a libopus -b:a 40k "{out_put_file_name}" -y'
  #Done !!
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
